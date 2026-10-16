@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Aluno | SGE</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #243247;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #173b70;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8ec5ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #8ec5ff;
+        }
+
+        main {
+            width: 84%;
+            max-width: 1200px;
+            margin: 40px auto;
+            flex: 1;
+        }
+
+        .welcome {
+            margin-bottom: 32px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #173b70;
+        }
+
+        .welcome p {
+            color: #66758a;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            color: #243b5a;
+        }
+
+        .event-count {
+            background-color: #e0edff;
+            color: #245ca6;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 16px rgba(24, 54, 91, 0.07);
+            border: 1px solid #e8edf4;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .event-type {
+            display: inline-block;
+            background-color: #e8f2ff;
+            color: #245ca6;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .event-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            color: #243b5a;
+        }
+
+        .event-description {
+            color: #68778a;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .event-info {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 22px;
+        }
+
+        .event-info li {
+            font-size: 13px;
+            color: #526176;
+            margin-bottom: 10px;
+        }
+
+        .event-info strong {
+            color: #344761;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            margin-top: auto;
+            background-color: #2463b5;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #174982;
+        }
+
+        footer {
+            background-color: #173b70;
+            color: #dbe7f7;
+            text-align: center;
+            padding: 22px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        footer p + p {
+            margin-top: 7px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 6%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+
+            main {
+                width: 90%;
+                margin: 28px auto;
+            }
+
+            .welcome h1 {
+                font-size: 25px;
+            }
+
+            .section-title h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">SGE <span>Eventos</span></div>
+
+        <nav aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#rodape">Contato</a>
+        </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="welcome">
+            <h1>Painel do Aluno</h1>
+            <p>
+                Bem-vindo ao Sistema de Gestão de Eventos!
+                Confira as próximas atividades da escola e inscreva-se
+                nos eventos que despertam seu interesse.
+            </p>
+        </section>
+
+        <section id="eventos">
+            <div class="section-title">
+                <h2>Próximos Eventos</h2>
+                <span class="event-count">3 eventos</span>
+            </div>
+
+            <div class="events">
+
+                <article class="event-card">
+                    <span class="event-type">Palestra</span>
+                    <h3>Inteligência Artificial</h3>
+                    <p class="event-description">
+                        Conheça as aplicações da inteligência artificial
+                        e seu impacto no mercado de trabalho.
+                    </p>
+
+                    <ul class="event-info">
+                        <li>📅 <strong>Data:</strong> 22/10/2026</li>
+                        <li>🕒 <strong>Horário:</strong> 19h às 21h</li>
+                        <li>📍 <strong>Local:</strong> Auditório da escola</li>
+                        <li>🎟️ <strong>Vagas:</strong> 35 disponíveis</li>
+                    </ul>
+
+                    <a class="btn" href="#inscricao-ia">
+                        Inscrever-se
+                    </a>
+                </article>
+
+                <article class="event-card">
+                    <span class="event-type">Oficina</span>
+                    <h3>Desenvolvimento Web</h3>
+                    <p class="event-description">
+                        Aprenda os fundamentos do HTML e CSS
+                        na criação de páginas para a internet.
+                    </p>
+
+                    <ul class="event-info">
+                        <li>📅 <strong>Data:</strong> 27/10/2026</li>
+                        <li>🕒 <strong>Horário:</strong> 14h às 17h</li>
+                        <li>📍 <strong>Local:</strong> Laboratório de informática</li>
+                        <li>🎟️ <strong>Vagas:</strong> 20 disponíveis</li>
+                    </ul>
+
+                    <a class="btn" href="#inscricao-web">
+                        Inscrever-se
+                    </a>
+                </article>
+
+                <article class="event-card">
+                    <span class="event-type">Minicurso</span>
+                    <h3>Introdução à Robótica</h3>
+                    <p class="event-description">
+                        Descubra conceitos básicos de robótica,
+                        sensores e automação.
+                    </p>
+
+                    <ul class="event-info">
+                        <li>📅 <strong>Data:</strong> 04/11/2026</li>
+                        <li>🕒 <strong>Horário:</strong> 08h às 11h</li>
+                        <li>📍 <strong>Local:</strong> Laboratório técnico</li>
+                        <li>🎟️ <strong>Vagas:</strong> 15 disponíveis</li>
+                    </ul>
+
+                    <a class="btn" href="#inscricao-robotica">
+                        Inscrever-se
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        <p><strong>SGE — Sistema de Gestão de Eventos</strong></p>
+        <p>Escola Técnica | Organização e participação em eventos acadêmicos.</p>
+        <p>© 2026 — Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
